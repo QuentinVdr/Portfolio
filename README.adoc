@@ -1,0 +1,25 @@
+= Portfolio Quentin VERDIER
+
+Portfolio de quentin verdier pour le BTS SIO. Deployé avec vercel sur https://quentinverdier.me/[quentinverdier.me]
+Portfolio réaliser en https://nextjs.org/[Next.js] avec https://tailwindcss.com/[tailwindcss] et https://www.framer.com/motion/[motion-framer]
+
+== Getting Started
+
+installer les dependence
+
+```bash
+npm install
+```
+
+lancer site en http://localhost:3000[local] sur http://localhost:3000
+
+```bach
+npm run dev
+```
+
+== External Libraries used in this project and tools:
+
+- https://tailwindcss.com/
+- https://www.framer.com/motion/
+- Fonts from https://fonts.google.com/ 
+- Icons from https://iconify.design/
