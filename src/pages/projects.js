@@ -29,17 +29,18 @@ const DeployedProject = ({type, title, summary, img, link, github}) => {
                 target="_blank"
                 className="w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full"
             >
-                <FramerImage
-                    src={img}
-                    alt={title}
-                    className="w-full h-auto"
-                    whileHover={{scale: 1.05}}
-                    transition={{duration: 0.2}}
-                    priority
-                    sizes="(max-width: 768px) 100vw,
-                          (max-width: 1200px) 50vw,
-                          50vw"
-                />
+                <div className="w-full h-auto">
+                    <FramerImage
+                        src={img}
+                        alt={title}
+                        whileHover={{scale: 1.05}}
+                        transition={{duration: 0.2}}
+                        priority
+                        sizes="(max-width: 768px) 100vw,
+                              (max-width: 1200px) 50vw,
+                              50vw"
+                    />
+                </div>
             </Link>
 
             <div className="w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
@@ -59,10 +60,17 @@ const DeployedProject = ({type, title, summary, img, link, github}) => {
                     {summary}
                 </p>
                 <div className="mt-2 flex items-center">
-                    <Link href={github} target="_blank" className="w-10">
+                    <motion.a
+                        href={github}
+                        target={"_blank"}
+                        className="w-10"
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.9 }}
+                        aria-label="Lien vers le repository github du projet"
+                    >
                         {" "}
-                        <GithubIcon/>
-                    </Link>
+                        <GithubIcon />
+                    </motion.a>
                     <Link
                         href={link}
                         target="_blank"
@@ -77,7 +85,7 @@ const DeployedProject = ({type, title, summary, img, link, github}) => {
     );
 };
 
-const ProjectNoLink = ({type, title, summary, img, github}) => {
+const Project = ({type, title, summary, img, github}) => {
     return (
         <article
             className="w-full flex flex-col items-center justify-center rounded-2xl
@@ -112,9 +120,17 @@ const ProjectNoLink = ({type, title, summary, img, github}) => {
                     {summary}
                 </p>
                 <div className="w-full flex items-center">
-                    <Link href={github} target="_blank" className="w-8 md:w-6">
-                        <GithubIcon/>
-                    </Link>
+                    <motion.a
+                        href={github}
+                        target={"_blank"}
+                        className="w-8 md:w-6"
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.9 }}
+                        aria-label="Lien vers le repository github du projet"
+                    >
+                        {" "}
+                        <GithubIcon />
+                    </motion.a>
                 </div>
             </div>
         </article>
@@ -151,7 +167,7 @@ const projects = () => {
                             />
                         </div>
                         <div className="col-span-6 sm:col-span-12">
-                            <ProjectNoLink
+                            <Project
                                 type="Project fin de module"
                                 title="Zoo Symfony"
                                 summary="Projet local Symfony en binome en relation avec un base de donnée pour gérer un zoo"
@@ -161,7 +177,7 @@ const projects = () => {
                         </div>
 
                         <div className="col-span-6 sm:col-span-12">
-                            <ProjectNoLink
+                            <Project
                                 type="Project fin de module"
                                 title="Chaton Database Symfony"
                                 summary="Projet solo local Symfony en utilisant un base de donnée destiné a gerer et répertorié des chatons et des proprietaires"

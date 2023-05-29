@@ -5,7 +5,8 @@ import {
     GithubIcon,
     LinkedInIcon,
     SunIcon,
-    MoonIcon, MailIcon,
+    MoonIcon,
+    MailIcon,
 } from "./Icons";
 import Logo from "./Logo";
 import { motion } from "framer-motion";
@@ -71,6 +72,7 @@ const NavBar = () => {
             <button
                 className="flex-col justify-center items-center hidden lg:flex"
                 onClick={handleClick}
+                aria-label="Bouton pour la navbar déroulante"
             >
                 <span className={`bg-dark dark:bg-light block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm  ${
                         isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"}`}

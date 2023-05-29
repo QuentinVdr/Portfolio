@@ -4,7 +4,7 @@ import Experience from "@/components/Experience";
 import Layout from "@/components/Layout";
 import Skills from "@/components/Skills";
 import TransitionEffect from "@/components/TransitionEffect";
-import { useInView, useMotionValue, useSpring } from "framer-motion";
+import {motion, useInView, useMotionValue, useSpring} from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
@@ -90,22 +90,37 @@ export default function Home() {
                                     </p>
                                     <LinkArrow className={"w-6 ml-1"}/>
                                 </Link>
-                                <div className='flex gap-2'>
-                                    <Link href="mailto:quent1.verdier@gmail.com" target={"_blank"}
-                                          className="flex items-center ml-4 text-lg font-medium capitalize text-dark
-                                          underline dark:text-light md:text-base">
+                                <div className='flex gap-4'>
+                                    <motion.a
+                                        href="mailto:quent1.verdier@gmail.com"
+                                        target={"_blank"}
+                                        className="w-6"
+                                        whileHover={{ y: -2 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        aria-label="Bouton pour m'envoyé un mail"
+                                    >
                                         <MailIcon />
-                                    </Link>
-                                    <Link href="https://github.com/QuentinVdr" target={"_blank"}
-                                          className="flex items-center ml-4 text-lg font-medium capitalize text-dark
-                                          underline dark:text-light md:text-base">
+                                    </motion.a>
+                                    <motion.a
+                                        href="https://github.com/QuentinVdr"
+                                        target={"_blank"}
+                                        className="w-6"
+                                        whileHover={{ y: -2 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        aria-label="Bouton pour voir mon profile github"
+                                    >
                                         <GithubIcon />
-                                    </Link>
-                                    <Link href="mailto:quent1.verdier@gmail.com" target={"_blank"}
-                                          className="flex items-center ml-4 text-lg font-medium capitalize text-dark
-                                          underline dark:text-light md:text-base">
+                                    </motion.a>
+                                    <motion.a
+                                        href="https://www.linkedin.com/in/verdier-quentin/"
+                                        target={"_blank"}
+                                        className="w-6"
+                                        whileHover={{ y: -2 }}
+                                        whileTap={{ scale: 0.9 }}
+                                        aria-label="Bouton pour voir mon profile linkedin"
+                                    >
                                         <LinkedInIcon />
-                                    </Link>
+                                    </motion.a>
                                 </div>
                             </div>
                         </div>
