@@ -137,7 +137,9 @@ const NoDeployedProject = ({type, title, summary, img, github}) => {
             </div>
         </article>
     );
-};const projects = () => {
+};
+
+const projects = () => {
     return (<>
             <Head>
                 <title>Quentin VERDIER | Projets</title>
