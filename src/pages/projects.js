@@ -8,6 +8,7 @@ import React from "react";
 import AnimeSearch from "public/images/projects/AnimeSearch.png";
 import ZooSymfony from "public/images/projects/ZooSymfony.png";
 import ChatonDBSymfony from "public/images/projects/ChatonDBSymfony.png";
+import ProjectBICE from "public/images/projects/ProjectBICE.png";
 import {motion} from "framer-motion";
 import TransitionEffect from "@/components/TransitionEffect";
 
@@ -79,6 +80,59 @@ const DeployedProject = ({type, title, summary, img, link, github}) => {
                     >
                         Visit Project
                     </Link>
+                </div>
+            </div>
+        </article>
+    );
+};
+
+const NoDeployedProject = ({type, title, summary, img, github}) => {
+    return (
+        <article
+            className="w-full flex items-center justify-between relative  rounded-br-2xl
+                        rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12 dark:bg-dark dark:border-light
+                        lg:flex-col lg:p-8 xs:rounded-2xl xs:rounded-br-3xl xs:p-4"
+        >
+            <div
+                className="absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light
+                            rounded-br-3xl xs:-right-2 sm:h-[102%] xs:w-full xs:rounded-[1.5rem]"
+            />
+            <div className="w-1/2 cursor-pointer overflow-hidden rounded-lg lg:w-full">
+                <FramerImage
+                    src={img}
+                    alt={title}
+                    whileHover={{scale: 1.05}}
+                    transition={{duration: 0.2}}
+                    priority
+                    sizes="(max-width: 768px) 100vw,
+                          (max-width: 1200px) 50vw,
+                          50vw"
+                    className="w-full h-auto"
+                />
+            </div>
+
+            <div className="w-1/2 flex flex-col items-start justify-between pl-6 lg:w-full lg:pl-0 lg:pt-6">
+                <span className="text-primary font-medium text-xl dark:text-primaryDark xs:text-base">
+                  {type}
+                </span>
+                <h2 className="my-2 w-full text-left text-4xl font-bold dark:text-light lg:text-3xl xs:text-2xl">
+                    {title}
+                </h2>
+                <p className="my-2 font-medium text-dark dark:text-light sm:text-sm">
+                    {summary}
+                </p>
+                <div className="mt-2 flex items-center">
+                    <motion.a
+                        href={github}
+                        target={"_blank"}
+                        className="w-10"
+                        whileHover={{ y: -2 }}
+                        whileTap={{ scale: 0.9 }}
+                        aria-label="Lien vers le repository github du projet"
+                    >
+                        {" "}
+                        <GithubIcon />
+                    </motion.a>
                 </div>
             </div>
         </article>
@@ -183,6 +237,16 @@ const projects = () => {
                                 summary="Projet solo local Symfony en utilisant un base de donnée destiné a gerer et répertorié des chatons et des proprietaires"
                                 img={ChatonDBSymfony}
                                 github="https://github.com/QuentinVdr/SymfonyChatonDB"
+                            />
+                        </div>
+                        <div className="col-span-12">
+                            <NoDeployedProject
+                                type="Projet BTS"
+                                title="Application BICE"
+                                summary="Une application pour facilité la gestion des interventions et des stocks d'une
+                            brigade de pompier nommé BICE"
+                                img={ProjectBICE}
+                                github="https://dev.azure.com/quentinverdier/RescueInventory/_git/RescueInventoryAPI"
                             />
                         </div>
                     </div>
