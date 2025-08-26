@@ -18,6 +18,7 @@ export default function App({ Component, pageProps }) {
         <Head>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="icon" href="/favicon.ico" />
+            <script defer src="https://umami.quentin-verdier.com/script.js" data-website-id="86971985-a6ee-47dc-8a73-60b74e806fd1"></script>
         </Head>
         <main className={`${montserrat.variable} font-mont bg-light dark:bg-dark w-full min-h-screen`}>
             <NavBar />
